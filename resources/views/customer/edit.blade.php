@@ -2,6 +2,9 @@
     <div class="modal-body">
         <form action="/customer/update/{{$customer->id}}" method="POST">
         {{csrf_field()}}
+        <div class="form-group">
+         <h2>Edit Data</h2>
+        </div>
           <div class="form-group">
           <label for="nama">Nama</label>
           <input type="text" name="nama" id="nama" value="{{ $customer->nama }}" class="form-control" placeholder="Nama">

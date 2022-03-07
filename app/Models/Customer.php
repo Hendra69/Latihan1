@@ -15,8 +15,10 @@ class Customer extends Model
     protected static $singleTableSubclasses = [Barang::class];
 
     protected $table = "customers";
+    protected $primaryKey = 'id';
     protected $fillable = [
         'nama', 'alt', 'type',
     ];
+   
     
 }

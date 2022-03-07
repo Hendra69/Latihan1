@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Reseller;
+use App\Models\Bobot;
+use App\Models\Brg;
+use App\Models\Multi;
+
 class ResellerController extends Controller
-{
+{   
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +19,7 @@ class ResellerController extends Controller
     public function index()
     {
         $re = Reseller::all();
+        $re = Reseller::paginate(5);
         return view ('reseller.index',compact('re'));
     }
 
@@ -30,8 +36,16 @@ class ResellerController extends Controller
             'toko' => 'required',
             'tlp'  => 'required',
             'alt'  => 'required',
+        ]); 
+         Brg::create([
+            
+            'nama' => $request->nama,
+            'toko' => $request->toko,
+            'tlp'  => $request->tlp,
+            'alt'  => $request->alt,
         ]);
-       
+      
+        // Reseller::create($request->all());
         return redirect()->back();
     
     }
@@ -66,7 +80,9 @@ class ResellerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reseller = Reseller::find($id);
+    
+        return view ('reseller/edit',['reseller' => $reseller]);
     }
 
     /**
@@ -78,7 +94,10 @@ class ResellerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $reseller = Reseller::find($id);
+        $reseller -> update($request->all());
+        
+        return redirect('reseller');
     }
 
     /**
@@ -89,6 +108,7 @@ class ResellerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Reseller::destroy($id);
+        return redirect('reseller');
     }
 }

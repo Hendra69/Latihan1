@@ -1,41 +1,7 @@
 window._ = require('lodash');
 
-window.$ = window.jQuery = require('jquery');
-
-require('../asset/lte/dist/js/adminlte.min.js');
-
 try {
-
-require('bootstrap');
-
- require('../asset/lte/plugins/jquery-ui/jquery-ui.min.js');
-
- require('../asset/lte/plugins/bootstrap/js/bootstrap.bundle.min.js');
-
-//  require('../asset/lte/plugins/chart.js/Chart.min.js');
-
- require('../asset/lte/plugins/sparklines/sparkline.js');
-
-//  require('../asset/lte/plugins/jqvmap/jquery.vmap.min.js');
-//  require('../asset/lte/plugins/jqvmap/maps/jquery.vmap.usa.js');
-
-//  require('../asset/lte/plugins/jquery-knob/jquery.knob.min.js');
-
-//  require('../asset/lte/plugins/moment/moment.min.js');
-//  require('../asset/lte/plugins/daterangepicker/daterangepicker.js');
-
-//  require('../asset/lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js');
-
-//  require('../asset/lte/plugins/summernote/summernote-bs4.min.js');
-
- require('../asset/lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js');
-
- require('../asset/lte/dist/js/adminlte.js');
-
-//  require('../asset/lte/dist/js/demo.js');
-
- require('../asset/lte/dist/js/pages/dashboard.js');
-
+    require('bootstrap');
 } catch (e) {}
 
 /**

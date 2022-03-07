@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use App\Models\Customer;
 use App\Models\Barang;
 use Illuminate\Http\Request;
+
 
 class CustomerController extends Controller
 {
@@ -15,6 +17,7 @@ class CustomerController extends Controller
     public function index()
     {
         $dat = Customer::all(); 
+        $dat = Customer::paginate(5);
         return view ('customer.index',compact('dat'));
     }
 

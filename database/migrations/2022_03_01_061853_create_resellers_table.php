@@ -19,6 +19,7 @@ class CreateResellersTable extends Migration
             $table->string('toko');
             $table->string('tlp');
             $table->string('alt');
+            $table->string('type');
             $table->timestamps();
         });
     }

@@ -29,3 +29,13 @@ Route::get('/customer/destroy/{id}', [App\Http\Controllers\CustomerController::c
 
 Route::resource('reseller',ResellerController::class);
 Route::post('/reseller/create', [App\Http\Controllers\ResellerController::class, 'create']);
+Route::get('/reseller/edit/{id}', [App\Http\Controllers\ResellerController::class, 'edit']);
+Route::post('/reseller/update/{id}', [App\Http\Controllers\ResellerController::class, 'update']);
+Route::get('/reseller/destroy/{id}', [App\Http\Controllers\ResellerController::class, 'destroy']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
